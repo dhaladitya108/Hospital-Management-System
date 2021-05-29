@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container m-5">
+    {% for data in datas %}
+    <div class="card mb-5" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ data.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ data.email }}</h6>
+            <p class="card-text">{{ data.health_condition }}</p>
+            <a href="#" class="card-link">Send Mail</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
