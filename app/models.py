@@ -1,5 +1,6 @@
 from django.db import models
-from django.urls import reverse
+from django import forms
+
 
 class Patient(models.Model):
     GENDER_CHOICE = (
@@ -18,4 +19,11 @@ class Patient(models.Model):
     def __str__(self):
         return self.name
 
-    
+
+class AppointmentEmail(models.Model):
+    email = models.EmailField(max_length=40)
+    subject = models.CharField(max_length=60)
+    message = models.CharField(max_length=400)
+
+    def __str__(self):
+        return self.email
